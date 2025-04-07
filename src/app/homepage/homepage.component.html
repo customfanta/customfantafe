@@ -1,0 +1,38 @@
+<div class="main-container">
+  <div class="left-part" id="box">
+    <div class="title-text">CUSTOM FANTA</div>
+  </div>
+
+  <div class="right-part">
+    <div class="auth-container" id="login-container">
+      <img
+        class="image-container"
+        src="assets/landscape-placeholder.svg"
+        alt="Image"
+      />
+      <h2 class="auth-text">Login</h2>
+      <form class="form-container" onsubmit="handleLogin(event)">
+        <input
+          class="text-input"
+          type="text"
+          id="username-log"
+          name="username"
+          placeholder="Username or Mail"
+        />
+        <input
+          class="text-input"
+          type="password"
+          id="password-log"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <button class="submit-button" type="submit">Login</button>
+      </form>
+      <p>
+        Non hai un account?
+        <a href="#" onclick="toggleAuth('register')">Registrati qui</a>
+      </p>
+    </div>
+  </div>
+</div>

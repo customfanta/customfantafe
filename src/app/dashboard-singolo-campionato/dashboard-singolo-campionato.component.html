@@ -1,0 +1,99 @@
+<div class="container-dashboard">
+    <div class="header">
+      <button onclick="window.location.href='/pages/campionati/campionati.html'">
+        Torna ai Campionati
+      </button>
+      <div class="profile">
+        <div class="profile-name-container">
+          <div class="name">
+            <p id="user-info"></p>
+          </div>
+          <img src="assets/profile.svg" width="20px" />
+        </div>
+        <div class="toggle-menu-profile">
+          <button id="admin-btn" class="admin-button">
+            Vai al pannello Admin
+          </button>
+          <button id="invita-utente-button" class="logout-button">Invita Utente</button>
+          <button id="logout-button" class="logout-button">Logout</button>
+        </div>
+      </div>
+    </div>
+  
+    <div id="new-content" class="new-content" style="display: none">
+  
+      <div class="logo-container">
+        <div id="logo-nome-campionato" class="logo">FC</div>
+      </div>
+    
+      <h1 id="nome-campionato" class="nome-campionato">Nome Campionato</h1>
+  
+      <div class="main-container">
+        <div id="main-team" class="main-team">
+  
+        </div>
+  
+        <div class="separator"></div>
+  
+        <div id="bottom-team-grid" class="bottom-team-grid">
+  
+        </div>
+  
+      </div>
+    </div>
+  
+    <div id="content">
+      <div id="create-form-container"  class="create-form" style="display: none">
+        <h2>Crea la tua squadra!</h2>
+        <div class="creazione-squadra-container">
+          <div class="squadra-info-container">
+            <div class="text-info-container">
+              <input class="nome-squadra"
+                      type="text"
+                      id="squadra-name"
+                      placeholder="Nome Squadra"
+                      required/>
+              <textarea
+                      class="squadra-desc"
+                      id="squadra-desc"
+                      placeholder="Descrizione"
+                      rows="5"
+                      cols="33"
+                      required></textarea>
+              <div id="selected-personaggi"></div>
+            </div>
+            <div class="footer-info-container">
+              <div id="remaining-credits">Crediti rimanenti: 160</div>
+              <button id="create-btn" disabled>Creare Squadra</button>
+            </div>
+          </div>
+          <div class="lista-container">
+            <div class="selected-count-container">
+              <div class="selected-count" id="selected-count">0/5</div>
+            </div>
+            <div id="personaggi-list" class="scrollable-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  <!-- Modale per invitare un utente -->
+  <div id="invitaUtenteModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Invita Utente al Campionato</h3>
+  
+      <input type="text"
+             id="usernameUtenteDaInvitare"
+             name="usernameUtenteDaInvitare"
+             placeholder="Ricerca per username, nome o mail..."
+             autocomplete="off"
+             onkeyup="handleSearchInput(this.value)"/>
+  
+      <div id="search-results" class="search-results"></div>
+  
+      <button onclick="invitaUtente()">Conferma</button>
+    </div>
+  </div>

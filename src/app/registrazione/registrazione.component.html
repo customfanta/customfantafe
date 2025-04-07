@@ -1,0 +1,47 @@
+<div class="auth-container" id="register-container">
+    <img
+      class="image-container"
+      src="assets/landscape-placeholder.svg"
+      alt="Image"
+    />
+    <h2 class="auth-text">Crea un account</h2>
+    <form class="form-container" onsubmit="handleRegister(event)">
+      <input
+        class="text-input"
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Username"
+        required
+      />
+      <input
+        class="text-input"
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="Nome"
+        required
+      />
+      <input
+        class="text-input"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email"
+        required
+      />
+      <input
+        class="text-input"
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+        required
+      />
+      <button class="submit-button" type="submit">Registrati</button>
+    </form>
+    <p>
+      Hai già un account?
+      <a href="#" onclick="toggleAuth('login')">Accedi qui</a>
+    </p>
+  </div>
