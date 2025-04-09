@@ -59,7 +59,7 @@ export class CampionatiComponent implements OnInit {
       const nuovoCampionato = await this.apiCaller.creaCampionato(this.nomeCampionato, this.descrizioneCampionato);
       this.closeModaleCreaCampionato();
       if (nuovoCampionato) {
-        this.campionati = await this.apiCaller.recuperaCampionati();
+        this.campionati = await this.apiCaller.recuperaCampionati().toPromise();
       }
     } catch (error) {
       console.error('Errore durante la creazione del campionato:', error);

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiCallerService } from '../services/api-caller.service';
-import { RouterLink } from '@angular/router'; 
+import { Router, RouterLink } from '@angular/router'; 
 
 @Component({
   selector: 'app-homepage',
@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent {
-  constructor(private apiCaller: ApiCallerService ) {}
+  constructor(private apiCaller: ApiCallerService, private router: Router) {}
 
   async handleLogin(event: Event): Promise<void> {
     event.preventDefault();
@@ -24,7 +24,7 @@ export class HomepageComponent {
 
       if (utente) {
         localStorage.setItem('user', JSON.stringify(utente));
-        window.location.href = '/pages/campionati/campionati.html';
+        this.router.navigate(['/campionati']);
       }
     } catch (error) {
       console.error('Errore durante il login:', error);
