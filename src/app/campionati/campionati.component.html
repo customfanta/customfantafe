@@ -29,7 +29,31 @@
   <div class="warning-box" *ngIf="!user?.mailCertificata">
     <p>⚠️ Attenzione! La tua mail non è certificata, certifica la mail (controlla anche nello spam) per abilitare tutte le funzioni!</p>
   </div>
-  <div id="table-container"></div>
+  
+  <!-- Tabella per mostrare i campionati -->
+  <div id="table-container">
+    <table *ngIf="campionati?.length && campionati.length > 0" class="campionati-table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Descrizione</th>
+          <th>Owner</th>
+          <th>Ruolo</th>
+          <th>Accedi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let campionato of campionati">
+          <td>{{ campionato.nomeCampionato }}</td>
+          <td>{{ campionato.descrizioneCampionato }}</td>
+          <td>{{ campionato.ownerCampionato }}</td>
+          <td>{{ campionato.ruoloUtente }}</td>
+          <td><a [routerLink]="['/dashboard-campionato']">Apri</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="campionati?.length === 0">Nessun campionato disponibile.</p>
+  </div>
 </div>
 
 <div class="modal" *ngIf="showCreaCampionatoModal">

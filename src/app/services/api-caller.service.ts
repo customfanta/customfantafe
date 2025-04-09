@@ -116,7 +116,7 @@ export class ApiCallerService {
   }
 
   recuperaInvitiInviati(): Observable<any> {
-    const apiUrl = this.isLocalValue ? "../../.mock/api/read-inviti-inviati.json" : this.serverHost + "/read-inviti-inviati";
+    const apiUrl = this.isLocalValue ? "/assets/mock/api/read-inviti-inviati.json" : this.serverHost + "/read-inviti-inviati";
     return this.makeGet(apiUrl);
   }
 
@@ -126,37 +126,37 @@ export class ApiCallerService {
   }
 
   accettaInvito(chiaveInvito: string): Observable<any> {
-    const apiUrl = this.isLocalValue ? "../../.mock/api/esito.json" : this.serverHost + "/accetta-invito/" + chiaveInvito;
+    const apiUrl = this.isLocalValue ? "/assets/mock/api/esito.json" : this.serverHost + "/accetta-invito/" + chiaveInvito;
     return this.makeGet(apiUrl);
   }
 
   rifiutaInvito(chiaveInvito: string): Observable<any> {
-    const apiUrl = this.isLocalValue ? "../../.mock/api/esito.json" : this.serverHost + "/rifiuta-invito/" + chiaveInvito;
+    const apiUrl = this.isLocalValue ? "/assets/mock/api/esito.json" : this.serverHost + "/rifiuta-invito/" + chiaveInvito;
     return this.makeGet(apiUrl);
   }
 
   recuperaConfigurazioniCampionato(chiaveCampionato: string): Observable<any> {
-    const apiUrl = this.isLocalValue ? "../../.mock/api/recupera-configurazioni-campionato.json" : this.serverHost + "/recupera-configurazioni-campionato/" + chiaveCampionato;
+    const apiUrl = this.isLocalValue ? "/assets/mock/api/recupera-configurazioni-campionato.json" : this.serverHost + "/recupera-configurazioni-campionato/" + chiaveCampionato;
     return this.makeGet(apiUrl);
   }
 
   aggiungiConfigurazioneCampionato(chiaveCampionato: string, chiaveConfigurazione: string, valoreConfigurazione: string): Observable<any> {
-    const apiUrl = this.isLocalValue ? "../../.mock/api/esito.json" : this.serverHost + "/aggiungi-configurazione-campionato";
+    const apiUrl = this.isLocalValue ? "/assets/mock/api/esito.json" : this.serverHost + "/aggiungi-configurazione-campionato";
     return this.makePost(apiUrl, JSON.stringify({ chiaveCampionato, chiaveConfigurazione, valoreConfigurazione }));
   }
 
   ricercaUtente(chiaveCampionato: string, searchParam: string, options = {}): Observable<any> {
-    const apiUrl = this.isLocalValue ? "../../.mock/api/ricerca-utente.json" : this.serverHost + "/ricerca-utente/" + chiaveCampionato + "?searchParam=" + searchParam;
+    const apiUrl = this.isLocalValue ? "/assets/mock/api/ricerca-utente.json" : this.serverHost + "/ricerca-utente/" + chiaveCampionato + "?searchParam=" + searchParam;
     return this.makeGet(apiUrl, options);
   }
 
   recuperaSquadreCampionato(chiaveCampionato: string): Observable<any> {
-    const apiUrl = this.isLocalValue ? "../../.mock/api/recupera-squadre-campionato.json" : this.serverHost + "/recupera-squadre-campionato/" + chiaveCampionato;
+    const apiUrl = this.isLocalValue ? "/assets/mock/api/recupera-squadre-campionato.json" : this.serverHost + "/recupera-squadre-campionato/" + chiaveCampionato;
     return this.makeGet(apiUrl);
   }
 
   uploadAzioni(file: any): Observable<any> {
-    const apiUrl = this.isLocalValue ? "../../.mock/api/esito.json" : this.serverHost + "/csv/upload-azioni";
+    const apiUrl = this.isLocalValue ? "/assets/mock/api/esito.json" : this.serverHost + "/csv/upload-azioni";
     return this.makePostFormData(apiUrl, file);
   }
 
