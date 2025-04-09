@@ -11,7 +11,7 @@
         alt="Image"
       />
       <h2 class="auth-text">Login</h2>
-      <form class="form-container" onsubmit="handleLogin(event)">
+      <form class="form-container" (submit)="handleLogin($event)">
         <input
           class="text-input"
           type="text"
@@ -31,7 +31,7 @@
       </form>
       <p>
         Non hai un account?
-        <a href="#" onclick="toggleAuth('register')">Registrati qui</a>
+        <a routerLink="/registrazione">Registrati qui</a>
       </p>
     </div>
   </div>
